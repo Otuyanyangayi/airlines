@@ -1,0 +1,8 @@
+.modal {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    right: 40px;
+    bottom: 40px;
+    background-color: rgb(24, 21, 16);
+  }

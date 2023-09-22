@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import { Button  } from "react-bootstrap";
+import {Modal} from 'react-bootstrap';
 
-const Modal = ({ isOpen, onClose:closeMOdal, details}) => {
+const ModalDetails = ({ isOpen, onClose:closeMOdal, details}) => {
 
 useEffect(
 ()=>{
@@ -11,14 +12,25 @@ useEffect(
 
   
     return (
-<div>
+<div  className="modal show"
+      style={{ display: 'block', position: 'initial' }} >
+<Modal.Dialog>   
+<Modal.Header closeButton>
+<Modal.Title>More Details</Modal.Title>
+  </Modal.Header>
+  <Modal.Body>
   <img src={details.logo} alt=".." />
+
   <h4>{details.slogan}</h4>
   <a href={details.website}>{details.website}</a>
   <p>{details.established}</p>
+  </Modal.Body>
+  <Modal.Footer>
   <Button onClick={closeMOdal} >Close</Button>
+  </Modal.Footer>
+  </Modal.Dialog>
 </div>
       );
   };
 
-export default Modal;
+export default ModalDetails;

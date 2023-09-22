@@ -1,9 +1,11 @@
 import React from 'react';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
-import Modal from './components/Modal';
+import ModalDetails from './components/Modal';
+import Background from "./components/6.jpg"
 import { useEffect } from 'react';
 import { useState } from 'react';
+
 
 
 
@@ -40,7 +42,8 @@ function App() {
   
   return (
     
-    <div>
+    <div style={{backgroundImage: `url(${Background})`,backgroundRepeat:"no-repeat"
+    ,backgroundSize: "cover",height : "140vh" }}>
       <h1>Know your Airlines!!</h1>
       
             <Table striped bordered hover>
@@ -76,7 +79,7 @@ function App() {
             </Table>
             {
               !isModalOpen? null :(
-                <Modal open={isModalOpen} onClose={closeModal} details={airline}/>
+                <ModalDetails open={isModalOpen} onClose={closeModal} details={airline}/>
               )
             }
           
