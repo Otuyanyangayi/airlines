@@ -15,7 +15,7 @@ useEffect(
 <div  className="modal show"
       style={{ display: 'block', position: 'initial' }} >
 <Modal.Dialog>   
-<Modal.Header closeButton>
+<Modal.Header closeButton onClick={closeMOdal}>
 <Modal.Title>More Details</Modal.Title>
   </Modal.Header>
   <Modal.Body>
@@ -23,7 +23,7 @@ useEffect(
 
   <h4>{details.slogan}</h4>
   <a href={details.website}>{details.website}</a>
-  <p>{details.established}</p>
+  <h5>{details.established}</h5>
   </Modal.Body>
   <Modal.Footer>
   <Button onClick={closeMOdal} >Close</Button>
