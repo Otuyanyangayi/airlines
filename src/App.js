@@ -5,7 +5,7 @@ import ModalDetails from './components/Modal';
 import Background from "./components/6.jpg"
 import { useEffect } from 'react';
 import { useState } from 'react';
-
+import airlinesJson from './utils/Data.json'
 
 
 
@@ -13,6 +13,7 @@ import { useState } from 'react';
 
 
 function App() {
+const records=airlinesJson.airlines
   const columns = [
     'Name',
     'Country',
@@ -20,18 +21,9 @@ function App() {
 
   ]
 
-  const [records, setRecords] = useState([])
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [airline, setAirline] = useState({})
 
-  useEffect(() => {
-    fetch('http://localhost:3000/Data.json')
-      .then(res => res.json())
-      .then(data => {
-        setRecords(data.airlines)
-      })
-
-  }, [])
 
   useEffect(() => {
     console.log(columns)
