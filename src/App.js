@@ -1,6 +1,7 @@
 import React from 'react';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
+import Modal from './components/Modal';
 import { useEffect } from 'react';
 import { useState } from 'react';
 
@@ -18,6 +19,8 @@ function App() {
   ]
 
   const [records, setRecords] = useState([])
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [airline, setAirline] = useState({})
 
   useEffect(() => {
     fetch('http://localhost:3000/Data.json')
@@ -31,6 +34,8 @@ function App() {
   useEffect(()=>{
     console.log(columns)
   },[columns])
+
+  const closeModal = ()=>setIsModalOpen(false)
   
   
   return (
@@ -58,7 +63,9 @@ function App() {
                                 <td>{record.name}</td>
                                 <td>{record.country}</td>
                                 <td>{record.head_quaters}</td>
-                                <td><Button>view</Button></td>
+                                <td><Button onClick={() => {setIsModalOpen(true)
+                                setAirline(record)
+                                }}> View</Button></td>
                             </tr>
                         ))
 
@@ -67,6 +74,12 @@ function App() {
                     }
                 </tbody>
             </Table>
+            {
+              !isModalOpen? null :(
+                <Modal open={isModalOpen} onClose={closeModal} details={airline}/>
+              )
+            }
+          
         </div>
     
   );
