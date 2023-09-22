@@ -13,7 +13,7 @@ const ModalDetails = ({ isOpen, onClose: closeMOdal, details }) => {
 
   return (
     <div className="modal show"
-      style={{ display: 'block', position: 'initial',color: 'blue', textAlign: 'center' }} >
+      style={{ display: 'block', position: 'absolute',color: 'blue', textAlign: 'center' }} >
       <Modal.Dialog>
         <Modal.Header closeButton onClick={closeMOdal}>
           <Modal.Title>More Details</Modal.Title>

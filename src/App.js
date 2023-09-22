@@ -36,7 +36,7 @@ const records=airlinesJson.airlines
 
     <div style={{
       backgroundImage: `url(${Background})`, backgroundRepeat: "no-repeat"
-      , backgroundSize: "cover", height: "140vh"
+      , backgroundSize: "cover", height: "100vh"
     }}>
       <h1 style={{textAlign: 'center'}}>Know your Airlines!!</h1>
 
@@ -74,7 +74,7 @@ const records=airlinesJson.airlines
       </Table>
       {
         !isModalOpen ? null : (
-          <ModalDetails open={isModalOpen} onClose={closeModal} details={airline} />
+          <ModalDetails onClose={closeModal} details={airline} />
         )
       }
 
