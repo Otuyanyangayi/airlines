@@ -12,7 +12,10 @@ useEffect(
   
     return (
 <div>
-  <h1>{details.slogan}</h1>
+  <img src={details.logo} alt=".." />
+  <h4>{details.slogan}</h4>
+  <a href={details.website}>{details.website}</a>
+  <p>{details.established}</p>
   <Button onClick={closeMOdal} >Close</Button>
 </div>
       );
